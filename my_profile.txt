@@ -1,0 +1,100 @@
+class Geek < Person
+  include StarWarsFan
+end
+
+class SeniorDeveloper < Geek
+  def initialize(information, ruby_projects = [])
+    @likes = ["Ruby", "JavaScript", "Software Meetups", "Startups", "Code Reviews"]
+
+    @qualifications = [ "10 years of ruby",
+                        "Writes tests for code.",
+                        "rspec or test unit",
+                        "Good understanding of Security"]
+
+    @nice_to_haves = ["Open Source projects",
+                      "Mini-test",
+                      "Ecommerce",
+                      "Ruby Blog",
+                      "Pair Programming Experience",
+                      "Yard Docs" ]
+    @ruby_projects  = ruby_projects
+    @description    = information
+  end
+
+  def likes=(val)
+    @likes << val
+  end
+
+  def title
+    # "Right hand man / The person we need to start a solid core team."
+    "none"
+  end
+
+  def experience
+    (@qualifications + @nice_to_haves.join(' '))
+  end
+
+  def description
+    @description
+  end
+
+  def salary(cash   = '150K +', 
+             equity = 'a good amount', 
+             other  = {:food      => 'nice but not required', 
+                       :vacation  => 'within reason',
+                       :insurance => 'hopefully good policy'})
+
+    @cash               = cash
+    @equity             = equity
+    @other_compensation = other
+  end
+
+end
+
+class JobSeeker
+  def initialize
+    @david_henner   = SeniorDeveloper.new('Created ror_ecommerce., Formally worked at Shoedazzle and several other companies.  Been hacking on Ruby for close to 6 years.', ['https://github.com/drhenner/ror_ecommerce'])
+  end
+
+  def get_software_developer
+    @david_henner
+  end
+end
+
+class YourCompany < Company
+  def initialize
+    @tech_team = [JobSeeker.new.get_software_developer]
+  end
+
+  def name
+    "Some Cool Name"
+  end
+
+  def product
+    "Anything I can help run like a well Oiled machine.  My passion is to make your company run well."
+  end
+
+  def needs
+    SeniorDeveloper.new('Me')
+  end
+
+  def grow_tech_team(tech_guy)
+    @tech_team << tech_guy
+  end
+
+  def plan
+    "The first is to support the sales goals.  
+     Second, is to automate as much as possible.  Instead of hiring a new employees you should first be asking if a tech guy can automate the new employee's job.  
+     Third is to build an awesome culture, similar to github and to have an awesome time building great stuff.  
+     Fourth is to support open source projects.  
+     Last but not least, always live by the rule that 'Best Idea wins', titles should not determine what idea is the best idea."
+  end
+
+  def how_to_apply
+    'jobs@yourcompany.com'
+  end
+
+  def location
+    'Near San Francisco'
+  end
+end
