@@ -24,6 +24,22 @@ class SeniorDeveloper < Geek
   def likes=(val)
     @likes << val
   end
+  
+  def website
+    'http://www.ror-e.com'
+  end
+  
+  def blog
+    'http://www.ror-e.com/posts'
+  end
+  
+  def linkedin
+    'https://www.linkedin.com/in/davidhenner'
+  end
+  
+  def largest_open_source_project
+    'https://github.com/drhenner/ror_ecommerce'
+  end
 
   def title
     # "Right hand man / The person we need to start a solid core team."
