@@ -42,7 +42,7 @@ class SeniorDeveloper < Geek
   end
 
   def title
-    # "Right hand man / The person we need to start a solid core team."
+    # "The person we need to start a solid core team."
     "none"
   end
 
@@ -69,7 +69,14 @@ end
 
 class JobSeeker
   def initialize
-    @david_henner   = SeniorDeveloper.new('Created ror_ecommerce., Formally worked at Shoedazzle and several other companies.  Been hacking on Ruby for close to 6 years.', ['https://github.com/drhenner/ror_ecommerce'])
+    @david_henner   = SeniorDeveloper.new(
+        'Created ror_ecommerce. 
+         Formally worked at Shoedazzle and several other companies.  
+         I've Been hacking on Ruby for close to 10 years.  I generally 
+         have started at most companies as an IC and then within a year 
+         start managing to some level.  Currently that means some of the 
+         local ENG team reports to me and all of the outsourced teams 
+         report to me.', ['https://github.com/drhenner/ror_ecommerce'])
   end
 
   def get_software_developer
