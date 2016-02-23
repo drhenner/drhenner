@@ -2,7 +2,7 @@ class Geek < Person
   include StarWarsFan
 end
 
-class SeniorDeveloper < Geek
+class DeveloperSlashManager < Geek
   def initialize(information, ruby_projects = [])
     @likes = ["Ruby", "JavaScript", "Software Meetups", "Startups", "Code Reviews"]
 
