@@ -69,7 +69,7 @@ end
 
 class JobSeeker
   def initialize
-    @david_henner   = SeniorDeveloper.new(
+    @david_henner   = DeveloperSlashManager.new(
         'Created ror_ecommerce. 
          Formally worked at Shoedazzle and several other companies.  
          I've Been hacking on Ruby for close to 10 years.  I generally 
@@ -98,7 +98,7 @@ class YourCompany < Company
   end
 
   def needs
-    SeniorDeveloper.new('Me')
+    DeveloperSlashManager.new('Me')
   end
 
   def grow_tech_team(tech_guy)
@@ -121,3 +121,6 @@ class YourCompany < Company
     'Near San Francisco'
   end
 end
+
+# OMG He didn't write tests!!!   FAIL
+# =)
